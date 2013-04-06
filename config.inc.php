@@ -12,12 +12,16 @@ $REX['PERM'][] = 'tracking_code[]';
 
 // includes
 require($REX['INCLUDE_PATH'] . '/addons/tracking_code/classes/class.rex_tracking_code.inc.php');
-require($REX['INCLUDE_PATH'] . '/addons/tracking_code/classes/class.rex_tracking_code_utils.inc.php');
 
-// settings
-rex_tracking_code_utils::includeSettingsFile();
+// fetch all strings for later usage with getString method
+if (!$REX['SETUP']) {
+	rex_register_extension('ADDONS_INCLUDED', 'rex_tracking_code::init');
+}
 
 if ($REX['REDAXO']) {
+	// includes
+	require($REX['INCLUDE_PATH'] . '/addons/tracking_code/classes/class.rex_tracking_code_utils.inc.php');
+
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/tracking_code/lang/');
 

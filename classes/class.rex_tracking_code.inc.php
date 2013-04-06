@@ -1,13 +1,18 @@
 <?php
 class rex_tracking_code {
-	public static function getTrackingCode() {
-		global $REX;
+	protected static $trackingCode = '';
 
-		if ($REX['ADDON']['tracking_code']['settings']['tracking_code'] == '') {
-			return '';
-		} else {
-			return $REX['ADDON']['tracking_code']['settings']['tracking_code'] . PHP_EOL;
-		}
+	public static function init() {
+		global $REX;
+		
+		$sql = new rex_sql();
+		$sql->setQuery('SELECT * FROM ' . $REX['TABLE_PREFIX'] . 'tracking_code WHERE id = 1');
+		
+		self::$trackingCode = $sql->getValue('tracking_code');
+	}
+
+	public static function getTrackingCode() {
+		return self::$trackingCode;
 	}
 }
 

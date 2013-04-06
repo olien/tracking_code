@@ -1,17 +1,13 @@
 <?php
 $func = rex_request('func', 'string');
-$trackingCode = trim(rex_request('tracking_code', 'string'));
-
-$configFile = $REX['INCLUDE_PATH'] . '/addons/tracking_code/' . rex_tracking_code_utils::getSettingsFile();
+$trackingCode = rex_tracking_code::getTrackingCode();
 
 if (rex_request('func', 'string') == 'save') {
-	$REX['ADDON']['tracking_code']['settings']['tracking_code'] = $trackingCode;
+	$trackingCode = trim(rex_request('tracking_code', 'string'));
 
-	$content = '
-		$REX[\'ADDON\'][\'tracking_code\'][\'settings\'][\'tracking_code\'] = "' . $trackingCode . '";
-	';
-
-	rex_tracking_code_utils::updateSettingsFile($configFile, $content);
+	$sql = new rex_sql();
+	//$sql->debugsql = 1;
+	$sql->setQuery('UPDATE ' . $REX['TABLE_PREFIX'] . 'tracking_code SET tracking_code = "' . $trackingCode . '" WHERE id = 1');
 }
 ?>
 
@@ -19,7 +15,7 @@ if (rex_request('func', 'string') == 'save') {
 	<h2 class="rex-hl2"><?php echo $I18N->msg('tracking_code_tracking_code', rex_tracking_code_utils::sanitizeUrl($REX['SERVER'])); ?></h2>
 	<div class="rex-area-content">
 		<form action="index.php" method="post">
-			<textarea class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code" rows="14" cols="98"><?php echo $REX['ADDON']['tracking_code']['settings']['tracking_code']; ?></textarea>
+			<textarea class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code" rows="14" cols="98"><?php echo $trackingCode; ?></textarea>
 
 			<input type="hidden" name="page" value="tracking_code" />
 			<input type="hidden" name="subpage" value="" />
