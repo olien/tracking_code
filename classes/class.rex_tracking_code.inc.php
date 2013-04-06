@@ -1,6 +1,6 @@
 <?php
 class rex_tracking_code {
-	public static function get() {
+	public static function getTrackingCode() {
 		global $REX;
 
 		if ($REX['ADDON']['tracking_code']['settings']['tracking_code'] == '') {

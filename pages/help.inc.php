@@ -1,5 +1,5 @@
 <?php
-$codeExample1 = '<?php echo rex_tracking_code::get(); ?>';
+$codeExample1 = '<?php echo rex_tracking_code::getTrackingCode(); ?>';
 ?>
 
 <div class="rex-addon-output">

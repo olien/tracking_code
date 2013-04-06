@@ -7,11 +7,11 @@ class rex_tracking_code_utils {
 	public static function getSettingsFile() {
 		global $REX;
 
-		if (isset($REX['WEBSITE_MANAGER'])) {
+		/*if (isset($REX['WEBSITE_MANAGER'])) {
 			return $REX['WEBSITE_MANAGER']->getCurrentWebsite()->getSettingsFile();
-		} else {
+		} else {*/
 			return 'settings.inc.php';
-		}
+		//}
 	}
 
 	public static function includeSettingsFile() {
