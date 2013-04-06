@@ -6,8 +6,8 @@ Ein ganz simples AddOn mit welchem man einen Tracking-Code für Statistiksysteme
 Features
 --------
 
-* Ausgabe des Trackingcodes über `rex_tracking_code::get()`
-* Kompatibel zum Website Manager AddOn
+* Ausgabe des Trackingcodes über `rex_tracking_code::getTrackingCode()`
+* Kompatibel zum [Website Manager AddOn](http://github.com/RexDude/website_manager)
 
 Hinweise
 --------

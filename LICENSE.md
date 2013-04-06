@@ -1,5 +1,5 @@
-Tracking Code AddOn für REDAXO - MIT Lizenz
-===========================================
+Tracking Code - MIT Lizenz
+==========================
 
 Copyright (c) 2013 RexDude
 
