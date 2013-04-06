@@ -12,7 +12,11 @@ class rex_tracking_code {
 	}
 
 	public static function getTrackingCode() {
-		return self::$trackingCode;
+		if (self::$trackingCode == '') {
+			return '';
+		} else {
+			return self::$trackingCode . PHP_EOL;
+		}
 	}
 }
 
