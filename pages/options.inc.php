@@ -8,6 +8,12 @@ if (rex_request('func', 'string') == 'save') {
 	$sql = new rex_sql();
 	//$sql->debugsql = 1;
 	$sql->setQuery('UPDATE ' . $REX['TABLE_PREFIX'] . 'tracking_code SET tracking_code = "' . $trackingCode . '" WHERE id = 1');
+
+	if ($sql->getError() == '')  {
+		echo rex_info($I18N->msg('tracking_code_configfile_update'));
+	} else {
+		echo rex_warning($I18N->msg('tracking_code_configfile_nosave'));
+	}
 }
 ?>
 
