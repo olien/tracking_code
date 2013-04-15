@@ -21,7 +21,7 @@ if (rex_request('func', 'string') == 'save') {
 	<h2 class="rex-hl2"><?php echo $I18N->msg('tracking_code_tracking_code', rex_tracking_code_utils::sanitizeUrl($REX['SERVER'])); ?></h2>
 	<div class="rex-area-content">
 		<form action="index.php" method="post">
-			<textarea class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code" rows="14" cols="98"><?php echo $trackingCode; ?></textarea>
+			<textarea class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code"><?php echo $trackingCode; ?></textarea>
 
 			<input type="hidden" name="page" value="tracking_code" />
 			<input type="hidden" name="subpage" value="" />
@@ -34,6 +34,11 @@ if (rex_request('func', 'string') == 'save') {
 </div>
 
 <style type="text/css">
+#rex-page-tracking-code textarea {
+	width: 98%;
+	height: 210px;
+}
+
 #rex-page-tracking-code .button {
 	float: right; 
 	margin-top: 10px;
