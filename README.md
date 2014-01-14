@@ -14,9 +14,8 @@ API
 ---
 
 ```php
-// geben Sie so den tracking code aus in ihrem template (in der regel vor dem body end tag):
+// tracking code ausgabe im template (in der regel vor dem body end tag):
 echo rex_tracking_code::getTrackingCode();
-</body>
 ```
 
 Hinweise

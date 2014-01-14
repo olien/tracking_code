@@ -2,7 +2,7 @@
 // init addon
 $REX['ADDON']['name']['tracking_code'] = 'Tracking Code';
 $REX['ADDON']['page']['tracking_code'] = 'tracking_code';
-$REX['ADDON']['version']['tracking_code'] = '1.0.0';
+$REX['ADDON']['version']['tracking_code'] = '1.0.1';
 $REX['ADDON']['author']['tracking_code'] = "RexDude";
 $REX['ADDON']['supportpage']['tracking_code'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['tracking_code'] = 'tracking_code[]';
