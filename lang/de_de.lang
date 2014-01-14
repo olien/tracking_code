@@ -6,5 +6,5 @@ tracking_code_configfile_update = Einstellungen wurden gespeichert.
 tracking_code_configfile_nosave = Einstellungen konnten nicht gespeichert werden!
 tracking_code_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreibbar!
 tracking_code_save_button = Speichern
-tracking_code_help_msg = Geben Sie so den Tracking Code aus an jeder belliebigen Stelle in Ihrem Template:
+tracking_code_help_msg = Geben Sie so den Tracking Code aus in Ihrem Template (in der Regel vor dem Body-End-Tag):
 

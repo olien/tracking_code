@@ -27,7 +27,10 @@ if ($REX['REDAXO']) {
 
 	// add subpages
 	$REX['ADDON']['tracking_code']['SUBPAGES'] = array(
-		array('', $I18N->msg('tracking_code_settings')),
-		array('help', $I18N->msg('tracking_code_help'))
+		array('', $I18N->msg('tracking_code_settings'))
 	);
+
+	if (isset($REX['USER']) && $REX['USER']->isAdmin()) {
+		$REX['ADDON']['tracking_code']['SUBPAGES'][] = array('help', $I18N->msg('tracking_code_help'));
+	}
 }
