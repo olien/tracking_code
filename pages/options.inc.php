@@ -21,7 +21,7 @@ if (rex_request('func', 'string') == 'save') {
 	<h2 class="rex-hl2"><?php echo $I18N->msg('tracking_code_tracking_code', rex_tracking_code_utils::sanitizeUrl($REX['SERVER'])); ?></h2>
 	<div class="rex-area-content">
 		<form action="index.php" method="post">
-			<textarea class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code"><?php echo $trackingCode; ?></textarea>
+			<textarea <?php if (OOPlugin::isAvailable('be_utilities', 'codemirror') || (isset($REX['ADDON']['be_style']['plugin_customizer']['codemirror']) && $REX['ADDON']['be_style']['plugin_customizer']['codemirror'] == 1)) { ?>style="display: none;"<?php } ?> class="codemirror" codemirror-mode="php/htmlmixed" name="tracking_code"><?php echo $trackingCode; ?></textarea>
 
 			<input type="hidden" name="page" value="tracking_code" />
 			<input type="hidden" name="subpage" value="" />
