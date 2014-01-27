@@ -1,6 +1,5 @@
 <?php
 $func = rex_request('func', 'string');
-$trackingCode = rex_tracking_code::getTrackingCode();
 
 if (rex_request('func', 'string') == 'save') {
 	$trackingCode = trim(rex_request('tracking_code', 'string'));
@@ -15,6 +14,9 @@ if (rex_request('func', 'string') == 'save') {
 		echo rex_warning($I18N->msg('tracking_code_configfile_nosave'));
 	}
 }
+
+rex_tracking_code::init();
+$trackingCode = rex_tracking_code::getTrackingCode();
 ?>
 
 <div class="rex-addon-output">
