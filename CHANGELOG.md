@@ -5,6 +5,7 @@ Tracking Code - Changelog
 
 * Hilfe Section nur noch für Admins sichtbar
 * Codebeispiel auch in die Readme hinzugefügt
+* Finetuning
 
 ### Version 1.0.0 - 21. Mai 2013
 
