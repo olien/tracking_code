@@ -36,7 +36,7 @@ if (rex_request('func', 'string') == 'save') {
 <style type="text/css">
 #rex-page-tracking-code textarea {
 	width: 98%;
-	height: 210px;
+	height: 280px;
 }
 
 #rex-page-tracking-code .button {
